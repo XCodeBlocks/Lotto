@@ -8,13 +8,12 @@ package xcodeblocks.lotto;
 
 public class Lotto {
 //[변수(variable) 선언]
-    int[] numbers;          //(생성 번호 저장)
+    private static final int NUMBER = 6;
+    private int[] numbers = new int[NUMBER];          //(생성 번호 저장)
 
 
 //[생성자(constructor)]
     public Lotto() {
-
-
 
     }
 
@@ -25,7 +24,7 @@ public class Lotto {
 //[선택 정렬]
     void selectionSort(int[] numbers)
     {
-
+        for (int x = 0 ;  ;  ){}
     }
 
 //[getter]
