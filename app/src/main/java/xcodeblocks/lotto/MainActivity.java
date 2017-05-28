@@ -1,3 +1,7 @@
+//[test code]
+
+//(Android project: Lotto random number generation)
+
 package xcodeblocks.lotto;
 
 import android.os.Bundle;
