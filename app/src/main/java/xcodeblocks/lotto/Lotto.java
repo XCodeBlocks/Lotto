@@ -12,13 +12,21 @@ public class Lotto {
 
 
 //[생성자(constructor)]
+    public Lotto() {
+
+
+
+    }
 
 
 //[랜덤 생성]
 
 
 //[선택 정렬]
+    void selectionSort(int[] numbers)
+    {
 
+    }
 
 //[getter]
 
