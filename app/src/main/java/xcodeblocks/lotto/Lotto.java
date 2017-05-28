@@ -1,3 +1,5 @@
+//[실제 기능 모음]
+
 package xcodeblocks.lotto;
 
 /**
@@ -5,4 +7,7 @@ package xcodeblocks.lotto;
  */
 
 public class Lotto {
+
+
+
 }
