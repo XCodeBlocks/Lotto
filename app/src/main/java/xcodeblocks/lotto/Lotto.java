@@ -8,6 +8,7 @@ package xcodeblocks.lotto;
 
 public class Lotto {
 //[변수(variable) 선언]
+    int[] numbers;          //(생성 번호 저장)
 
 
 //[생성자(constructor)]
