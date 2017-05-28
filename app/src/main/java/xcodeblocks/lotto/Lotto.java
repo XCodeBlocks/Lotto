@@ -10,7 +10,7 @@ public class Lotto {
 //[변수(variable) 선언]
 
 
-//[생성자]
+//[생성자(constructor)]
 
 
 //[랜덤 생성]
