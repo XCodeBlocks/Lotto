@@ -18,8 +18,8 @@ public class Lotto {
 
 //[생성자(constructor)]
     public Lotto() {
-        int x = 0;
-        while ( x < NUMBER_SEL) {       //(그냥 무조건 다음 index(x)로 넘어가면 안되므로 (for문 안씀))
+        int index = 0;
+        while ( index < NUMBER_SEL) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
             int rnd = getRandom(45);    //(-> 외부 메소드)
             boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
@@ -31,8 +31,8 @@ public class Lotto {
             }
             //[3: 중복이 되지 안을 때만 -> 다음 숫자 뽑기]
             if(!isDup) {
-                numbers[x] = rnd;       //(실제 대입)
-                x++;        //(다음 index)    //(flag는 매번 초기화되므로 여기서 건들 필요 X)
+                numbers[index] = rnd;       //(실제 대입)
+                        index++;        //(다음 index)    //(flag는 매번 초기화되므로 여기서 건들 필요 X)
             }
         }
     }
