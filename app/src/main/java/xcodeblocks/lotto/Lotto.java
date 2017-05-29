@@ -13,16 +13,19 @@ package xcodeblocks.lotto;
 public class Lotto {
 //[변수(variable) 선언]
     private static final int NUMBER_SEL = 6;              //(상수 - 선택하는 숫자 개수)
-    private int[] numbers = new int[NUMBER_SEL];          //(생성 번호 저장 - 상수 사용)
+    private int[] numbers = new int[NUMBER_SEL];          //(생성 번호 저장 - 상수 사용)  //(성분들 -> 기본 0으로 초기화)
 
 
 //[생성자(constructor)]
     public Lotto() {
-        //[]
+        int x;
+        while ( x < NUMBER_SEL) {
+            //[]
 
-        //[]
+            //[]
 
-        //[]
+            //[]
+        }
     }
 
 //[랜덤 생성 -- 숫자 1개]
