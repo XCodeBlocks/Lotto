@@ -18,6 +18,7 @@ public class Lotto {
 
 //[생성자(constructor)]
     public Lotto() {
+    //[[1: 6개 랜덤 숫자 뽑기]]
         int index = 0;
         while ( index < NUMBER_SEL) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
@@ -35,6 +36,9 @@ public class Lotto {
                         index++;        //(다음 index)    //(flag는 매번 초기화되므로 여기서 건들 필요 X)
             }
         }
+    //[[2: 오름차순 정렬]]
+        selectionSort(numbers);     //(-> 외부 메소드)
+
     }
 
 //[랜덤 생성 -- 숫자 1개]
