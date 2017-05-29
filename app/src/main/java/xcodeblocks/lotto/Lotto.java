@@ -24,12 +24,17 @@ public class Lotto {
 //[선택 정렬] - (오름차순)
     void selectionSort(int[] numbers)
     {
-        for (int x = 0 ;  ; x++ ) {
-
-            for (int y = 0 ;  ;  y++ ) {
-
+        for (int x = 0 ; x < (NUMBER_SEL - 1) ; x++ ) {
+            for (int y = (x+1) ; y < NUMBER_SEL ;  y++ ) {
+                if ( numbers[x] > numbers[y] ) {
+                    swap(numbers[x], numbers[y]);
+                }
             }
         }
+    }
+//[숫자 교환]
+    private void swap(int x, int y) {
+
     }
 
 //[getter]
