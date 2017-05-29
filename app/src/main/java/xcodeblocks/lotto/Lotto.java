@@ -5,8 +5,17 @@ package xcodeblocks.lotto;
 /**
  * Created by XCodeBlocks on 2017-05-29.
  *
+ * -(참고): [생성자]-[[1]]-[2]: (0 체크가 필요없는 이유):
+ *                            처음에 클래스 안에서 배열 필드(field) 선언할때는 자동으로 모든 성분들이 0으로 초기화 되는데
+ *                            저장하는 방식이... 저장해도 될때만 저장하는 방식이라서(미리 저장해서 바꾸지 않으므로)
+ *                            마지막 숫자를 확인할때 아직 배열(여기서는 numbers)의 마지막 성분이 0으로 그대로 있으므로
+ *                            이것과 비교하면 0이 나왔는지가 검출이 된다.
+ *
  * --(reference):
+ * -(특정 버전으로 되돌리기): (안드로이드 스튜디오에서는... 해당 브랜치 우클릭->Checkout Revision 하면 됨.) http://opendive.blogspot.kr/2015/06/git.html
+ *
  * -(숫자 랜덤 생성): http://www.java67.com/2015/01/how-to-get-random-number-between-0-and-1-java.html
+ *
  *
  */
 
@@ -24,9 +33,8 @@ public class Lotto {
             //[1: 일단 1개씩 생성]
             int rnd = getRandom(45);    //(-> 외부 메소드)
             boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
-            //[2: 이것을 0인지 + (이미 뽑은) 다른 숫자와 중복되는 지 확인]
+            //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]     -- (!: 0 나왔는지 체크는 필요없는 이유: 위의 /** */ 부분 참고)
             for (int pickedNum: numbers) {          //(확장형 for문)
-                if (rnd == 0)               //( 0   )
                 if (rnd == pickedNum) {     //(이미 뽑은 숫자와 겹치면...)
                     isDup = true;   break;  //(다음 index로 넘어가지 못하게 방지.)
                 }
