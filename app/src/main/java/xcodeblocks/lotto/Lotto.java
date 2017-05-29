@@ -21,7 +21,7 @@ public class Lotto {
 //[랜덤 생성]
 
 
-//[선택 정렬]
+//[선택 정렬] - (오름차순)
     void selectionSort(int[] numbers)
     {
         for (int x = 0 ;  ; x++ ) {
