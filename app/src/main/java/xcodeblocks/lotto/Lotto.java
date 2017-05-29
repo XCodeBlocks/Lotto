@@ -18,13 +18,13 @@ public class Lotto {
 
 //[생성자(constructor)]
     public Lotto() {
-        int x;
-        while ( x < NUMBER_SEL) {
-            //[]
+        int x = 0;
+        while ( x < NUMBER_SEL) {       //(그냥 다음 index로 넘어가면 안되므로 (for문 안씀))
+            //[1: 일단 1개씩 생성]
 
-            //[]
+            //[2: 이것을 다른 (이미 뽑은) 숫자와 중복되는 지 확인]
 
-            //[]
+            //[3: 중복이 되지 안을 때만 -> 다음 숫자 뽑기]
         }
     }
 
