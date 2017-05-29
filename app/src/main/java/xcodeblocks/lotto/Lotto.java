@@ -17,7 +17,6 @@ public class Lotto {
 
     }
 
-
 //[랜덤 생성]
 
 
@@ -27,14 +26,16 @@ public class Lotto {
         for (int x = 0 ; x < (NUMBER_SEL - 1) ; x++ ) {
             for (int y = (x+1) ; y < NUMBER_SEL ;  y++ ) {
                 if ( numbers[x] > numbers[y] ) {
-                    swap(numbers[x], numbers[y]);
+                    swap(numbers[x], numbers[y]);       //(별도 메소드로 분리)
                 }
             }
         }
     }
 //[숫자 교환]
     private void swap(int x, int y) {
-
+        int temp = x;
+               x = y;
+               y = temp;
     }
 
 //[getter]
