@@ -24,8 +24,9 @@ public class Lotto {
             //[1: 일단 1개씩 생성]
             int rnd = getRandom(45);    //(-> 외부 메소드)
             boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
-            //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
+            //[2: 이것을 0인지 + (이미 뽑은) 다른 숫자와 중복되는 지 확인]
             for (int pickedNum: numbers) {          //(확장형 for문)
+                if (rnd == 0)               //( 0   )
                 if (rnd == pickedNum) {     //(이미 뽑은 숫자와 겹치면...)
                     isDup = true;   break;  //(다음 index로 넘어가지 못하게 방지.)
                 }
