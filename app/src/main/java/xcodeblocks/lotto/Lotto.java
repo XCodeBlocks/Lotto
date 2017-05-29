@@ -13,6 +13,10 @@ package xcodeblocks.lotto;
  *
  * --(reference):
  * -(특정 버전으로 되돌리기): (안드로이드 스튜디오에서는... 해당 브랜치 우클릭->Checkout Revision 하면 됨.) http://opendive.blogspot.kr/2015/06/git.html
+ * (참고) - (한가지 해결 방법(오프라인으로 들은 advice)): 일단 HEAD 나두고... 프로젝트 전체를 다른 폴더에 clone 시켜서 내용 바꾸고 나서...
+ *                                                     수정한 파일을 잘못된 곳에 덮어씌우고 거기서 commit을 시키면 됨.
+ *                                                     (commit은 HEAD에서만 가능하다고 함.)
+ * -(오프라인에서 수정한 버전(revision)으로 branch 재지정하는 방법): https://stackoverflow.com/questions/5772192/how-can-i-reconcile-detached-head-with-master-origin
  *
  * -(숫자 랜덤 생성): http://www.java67.com/2015/01/how-to-get-random-number-between-0-and-1-java.html
  *
