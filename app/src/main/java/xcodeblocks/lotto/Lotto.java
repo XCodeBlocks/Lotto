@@ -19,9 +19,10 @@ public class Lotto {
 //[생성자(constructor)]
     public Lotto() {
         int x = 0;
-        while ( x < NUMBER_SEL) {       //(그냥 다음 index로 넘어가면 안되므로 (for문 안씀))
+        while ( x < NUMBER_SEL) {       //(그냥 무조건 다음 index(x)로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
-
+            int rnd = getRandom(45);    //(-> 외부 메소드)
+            boolean flag = false;       //(중복여부 스위치)
             //[2: 이것을 다른 (이미 뽑은) 숫자와 중복되는 지 확인]
 
             //[3: 중복이 되지 안을 때만 -> 다음 숫자 뽑기]
@@ -39,7 +40,7 @@ public class Lotto {
         for (int x = 0 ; x < (NUMBER_SEL - 1) ; x++ ) {
             for (int y = (x+1) ; y < NUMBER_SEL ;  y++ ) {
                 if ( numbers[x] > numbers[y] ) {
-                    swap(numbers[x], numbers[y]);       //(별도 메소드로 분리)
+                    swap(numbers[x], numbers[y]);       //(-> 별도 메소드로 분리)
                 }
             }
         }
