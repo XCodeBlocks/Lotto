@@ -14,11 +14,17 @@ public class Lotto {
 
 //[생성자(constructor)]
     public Lotto() {
+        //[]
 
+        //[]
+
+        //[]
     }
 
-//[랜덤 생성]
-
+//[랜덤 생성 -- 숫자 1개]
+    public static int getRandom(int max) {
+        return (int) (Math.random()*max);       //(원래 double형 결과가 나오는 거라서)
+    }
 
 //[선택 정렬] - (오름차순)
     void selectionSort(int[] numbers)
