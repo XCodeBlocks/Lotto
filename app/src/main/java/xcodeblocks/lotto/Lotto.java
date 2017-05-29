@@ -22,7 +22,7 @@ public class Lotto {
         while ( x < NUMBER_SEL) {       //(그냥 무조건 다음 index(x)로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
             int rnd = getRandom(45);    //(-> 외부 메소드)
-            boolean isDup = false;       //(중복여부 스위치)
+            boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
             //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
             for (int pickedNum: numbers) {          //(확장형 for문)
                 if (rnd == pickedNum) {     //(이미 뽑은 숫자와 겹치면...)
@@ -30,6 +30,10 @@ public class Lotto {
                 }
             }
             //[3: 중복이 되지 안을 때만 -> 다음 숫자 뽑기]
+            if(!isDup) {
+                numbers[x] = rnd;       //(실제 대입)
+                x++;        //(다음 index)    //(flag는 매번 초기화되므로 여기서 건들 필요 X)
+            }
         }
     }
 
