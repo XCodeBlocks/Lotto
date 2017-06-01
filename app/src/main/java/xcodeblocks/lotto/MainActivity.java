@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         //[확인(debugging)용]
         Lotto lottoTest = new Lotto();              //(객체 생성)
-        int[] numberArray = lottoTest.getNumbers();     //(임시 저장)
-        String str = null;                              //(임시 저장)
+        int[] numberArray = lottoTest.getNumbers();     //(임시 저장 -- 숫자 배열 대신 저장)
+        String str = null;                              //(임시 저장 -- logcat으로 갈 문자열)
         for(int x = 0; x < numberArray.length ; x ++)       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
         {str += Integer.toString( numberArray[x] );}        //(...로그 출력에 필요한 String 형태로 변환)
-        Log.i("String", str );                          //(logcat으로 출력)
+        Log.i("String", "디버그: " + str );                          //(logcat으로 출력)
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -51,10 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+/*
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+*/
     }
 
     @Override
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI();
+//    public native String stringFromJNI();
 
 
 }
