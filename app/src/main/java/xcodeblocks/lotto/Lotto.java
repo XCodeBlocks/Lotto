@@ -79,6 +79,10 @@ public class Lotto {
 
 //[getter]
 
+    public int[] getNumbers() {
+        return numbers;
+    }
+
 
 //[setter]      -- (필요할 때만!)
 

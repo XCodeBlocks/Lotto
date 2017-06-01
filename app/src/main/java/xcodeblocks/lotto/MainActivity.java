@@ -69,4 +69,9 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+//[확인(debugging)용]
+    Lotto lottoTest = new Lotto();
+    System.out.println( lottoTest.getNumbers() );
+
 }
