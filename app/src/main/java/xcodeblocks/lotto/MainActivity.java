@@ -2,6 +2,15 @@
 
 //(Android project: Lotto random number generation)
 
+
+/** [references]:
+ *
+ * - (logcat 사용 - 출력해서 확인하는 방법):
+ * https://stackoverflow.com/questions/38289910/print-on-console-in-android-studio
+ * ㄴ (실제로는 아래 코드처럼 사용)
+ */
+
+
 package xcodeblocks.lotto;
 
 import android.os.Bundle;
@@ -16,14 +25,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.lang.*;
-
 public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
 /*
     static {
-        loadLibrary("native-lib");
+        System.loadLibrary("native-lib");
     }
 */
 
@@ -39,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         int[] numberArray = lottoTest.getNumbers();     //(임시 저장 -- 숫자 배열 대신 저장)
         String str = null;                              //(임시 저장 -- logcat으로 갈 문자열)
         for(int x = 0; x < numberArray.length ; x ++)       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
-        {str += Integer.toString( numberArray[x] );}        //(...로그 출력에 필요한 String 형태로 변환)
-        Log.i("String", "디버그: " + str );                          //(logcat으로 출력)
+            {str += Integer.toString( numberArray[x] );}    //(...로그 출력에 필요한 String 형태로 변환)
+        Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
