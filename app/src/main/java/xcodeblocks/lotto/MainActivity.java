@@ -5,6 +5,8 @@
 package xcodeblocks.lotto;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,12 +16,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.lang.*;
+
 public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
+/*
     static {
-        System.loadLibrary("native-lib");
+        loadLibrary("native-lib");
     }
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +34,21 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //[확인(debugging)용]
+        Lotto lottoTest = new Lotto();              //(객체 생성)
+        int[] numberArray = lottoTest.getNumbers();     //(임시 저장)
+        String str = null;                              //(임시 저장)
+        for(int x = 0; x < numberArray.length ; x ++)       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
+        {str += Integer.toString( numberArray[x] );}        //(...로그 출력에 필요한 String 형태로 변환)
+        Log.i("String", str );                          //(logcat으로 출력)
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
 
@@ -70,8 +85,5 @@ public class MainActivity extends AppCompatActivity {
      */
     public native String stringFromJNI();
 
-//[확인(debugging)용]
-    Lotto lottoTest = new Lotto();
-    System.out.println( lottoTest.getNumbers() );
 
 }
