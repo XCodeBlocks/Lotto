@@ -1,27 +1,40 @@
 //[실제 기능 모음]
+//(필요하면 현재 코드를 일반 Java 환경에서 테스트해볼 것! (온라인 컴파일러 이용))
 
 package xcodeblocks.lotto;
+
+import java.util.Arrays;
 
 /**
  * Created by XCodeBlocks on 2017-05-29.
  *
- * -(참고): [생성자]-[[1]]-[2]: (0 체크가 필요없는 이유):
- *                            처음에 클래스 안에서 배열 필드(field) 선언할때는 자동으로 모든 성분들이 0으로 초기화 되는데
- *                            저장하는 방식이... 저장해도 될때만 저장하는 방식이라서(미리 저장해서 바꾸지 않으므로)
- *                            마지막 숫자를 확인할때 아직 배열(여기서는 numbers)의 마지막 성분이 0으로 그대로 있으므로
- *                            이것과 비교하면 0이 나왔는지가 검출이 된다.
+ * -(참고): (getRandom() 메소드): 1 더하지 않으면 (return에서) 범위가 (0 ~ (max - 1))로 나온다.
+ *                               따라서 이를 (1 ~ max)로 제대로 고치려면 1을 더한다.
+ *                              (http://mwultong.blogspot.com/2006/11/java-mathrandom-int.html)
+ *                               (http://itmir.tistory.com/310 --> 9-3번 항목)
  *
  * --(reference):
- * -(특정 버전으로 되돌리기): (안드로이드 스튜디오에서는... 해당 브랜치 우클릭->Checkout Revision 하면 됨.) http://opendive.blogspot.kr/2015/06/git.html
- * (참고) - (한가지 해결 방법(오프라인으로 들은 advice)): 일단 HEAD 나두고... 프로젝트 전체를 다른 폴더에 clone 시켜서 내용 바꾸고 나서...
+ * //(특정 버전으로 되돌리기): (필요시 브랜치(branch) 변경) -> 특정 커밋 선택(우클릭) -> 'Reset Current Branch to Here' 선택
+ *                         -> 4가지 옵션 중 적당한 것을 고름(아마도 로컬 브랜치만 원격 브랜치와 맞출 거라면 그냥 'keep' 고르면 될 듯?)
+ *                         -> HEAD도 같이 그 커밋(revision) 바뀜
+ *                         -> (이 커밋(revision)아닌 최신 버전(의 브랜치)이 다시 필요하면 위의 '브랜치 바꾸고 Reset 과정' 반복.)
+ *  ㄴ(출처): (자세한 설명): https://git-scm.com/book/ko/v2/Git-도구-Reset-명확히-알고-가기
+ *           (간략한 개념): https://backlogtool.com/git-guide/kr/stepup/stepup6_3.html
+ *           (추가 명령 (revert)): https://tuwlab.com/ece/22223
+ *  |
+ * //(안전하지 않은 방법인 듯 -- 위의 방법으로 대체):
+ *      -(특정 버전으로 되돌리기): (안드로이드 스튜디오에서는... 해당 브랜치 우클릭->Checkout Revision 하면 됨.) http://opendive.blogspot.kr/2015/06/git.html
+ *      (참고) - (한가지 해결 방법(오프라인으로 들은 advice)): 일단 HEAD 나두고... 프로젝트 전체를 다른 폴더에 clone 시켜서 내용 바꾸고 나서...
  *                                                     수정한 파일을 잘못된 곳에 덮어씌우고 거기서 commit을 시키면 됨.
  *                                                     (commit은 HEAD에서만 가능하다고 함.)
- * -(오프라인에서 수정한 버전(revision)으로 branch 재지정하는 방법): https://stackoverflow.com/questions/5772192/how-can-i-reconcile-detached-head-with-master-origin
+ *      -(오프라인에서 수정한 버전(revision)으로 branch 재지정하는 방법): https://stackoverflow.com/questions/5772192/how-can-i-reconcile-detached-head-with-master-origin
  *
  * -(숫자 랜덤 생성): http://www.java67.com/2015/01/how-to-get-random-number-between-0-and-1-java.html
- *
+ *              ㄴ (추가): (getRandom() 메소드 추가 설명으로...)
+ * -( Arrays.sort(배열명) ): http://emflant.tistory.com/210
  *
  */
+
 
 public class Lotto {
 //[변수(variable) 선언]
@@ -33,43 +46,31 @@ public class Lotto {
     public Lotto() {
     //[[1: 6개 랜덤 숫자 뽑기]]
         int index = 0;
-        while ( index < NUMBER_SEL) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
+        while ( index < NUMBER_SEL ) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
             int rnd = getRandom(45);    //(-> 외부 메소드)
             boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
-            //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]     -- (!: 0 나왔는지 체크는 필요없는 이유: 위의 /** */ 부분 참고)
+            //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
             for (int pickedNum: numbers) {          //(확장형 for문)
                 if (rnd == pickedNum) {     //(이미 뽑은 숫자와 겹치면...)
-                    isDup = true;   break;  //(다음 index로 넘어가지 못하게 방지.)
+                    isDup = true;   break;  //(... 다음 index로 넘어가지 못하게 방지.)
                 }
             }
-            //[3: 중복이 되지 안을 때만 -> 다음 숫자 뽑기]
-            if(!isDup) {
+            //[3: 중복이 되지 않을 때만 -> 다음 숫자 뽑기]
+            if(! isDup) {
                 numbers[index] = rnd;       //(실제 대입)
-                        index++;        //(다음 index)    //(flag는 매번 초기화되므로 여기서 건들 필요 X)
+                index++;            //(다음 index)    //(flag는 매번 초기화되므로 여기서 건들 필요 X)
             }
         }
     //[[2: 오름차순 정렬]]
-        selectionSort(numbers);     //(-> 외부 메소드)
-
+        Arrays.sort(numbers);       //(기존의 메소드를 이용한 오름차순 정렬)
     }
 
 //[랜덤 생성 -- 숫자 1개]
     public static int getRandom(int max) {
-        return (int) (Math.random() * max);       //(원래 double형 결과가 나오는 거라서)
+        return ( (int) (Math.random() * max) + 1 );       //(원래 double형 결과가 나오는 거라서 & (그냥은) 1 적은 숫자까지만 나옴.) -- (위 '참고'사항 참고)
     }
-
-//[선택 정렬] - (오름차순)
-    void selectionSort(int[] numbers)
-    {
-        for (int x = 0 ; x < (NUMBER_SEL - 1) ; x++ ) {
-            for (int y = (x+1) ; y < NUMBER_SEL ;  y++ ) {
-                if ( numbers[x] > numbers[y] ) {
-                    swap(numbers[x], numbers[y]);       //(-> 별도 메소드로 분리)
-                }
-            }
-        }
-    }
+// FIXME: (선택 정렬 직접 구현한 것 삭제) -- 기본 제공 메소드 사용
 //[숫자 교환]
     private void swap(int x, int y) {
         int temp = x;
@@ -78,11 +79,9 @@ public class Lotto {
     }
 
 //[getter]
-
     public int[] getNumbers() {
         return numbers;
     }
-
 
 //[setter]      -- (필요할 때만!)
 

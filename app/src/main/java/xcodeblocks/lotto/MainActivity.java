@@ -46,8 +46,12 @@ public class MainActivity extends AppCompatActivity {
         int[] numberArray = lottoTest.getNumbers();     //(임시 저장 -- 숫자 배열 대신 저장)
         String str = null;                              //(임시 저장 -- logcat으로 갈 문자열)
         for(int x = 0; x < numberArray.length ; x ++)       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
-            {str += Integer.toString( numberArray[x] );}    //(...로그 출력에 필요한 String 형태로 변환)
+            {str += ( Integer.toString( numberArray[x] ) + " " );}    //(...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
         Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
+
+// TODO: 2017-06-04: UI: 숫자 출력할 상자 만들기(맨 위 바를 없애지 않으면서)
+// TODO: 2017-06-04: UI: 숫자를 상자로 (출력되게) 연결시키기
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
