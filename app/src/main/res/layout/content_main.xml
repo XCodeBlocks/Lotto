@@ -3,50 +3,62 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
     tools:context="xcodeblocks.lotto.MainActivity">
 
-    <Button
-        android:text="1"
+    <TextView
+        android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:clickable="false"/>
+        android:background="@drawable/rectangle"
+        android:text="@string/one"/>
 
-    <Button
-        android:text="2"
+    <TextView
+        android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:clickable="false"/>
+        android:background="@drawable/rectangle"
+        android:text="@string/two"/>
 
-    <Button
-        android:text="3"
+    <TextView
+        android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:clickable="false"/>
+        android:background="@drawable/rectangle"
+        android:text="3"/>
 
-    <Button
-        android:text="4"
+    <TextView
+        android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:clickable="false"/>
+        android:background="@drawable/rectangle"
+        android:text="4"/>
 
-    <Button
-        android:text="5"
+    <TextView
+        android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:clickable="false"/>
+        android:background="@drawable/rectangle"
+        android:text="5"/>
 
-    <Button
-        android:text="6"
+    <TextView
+        android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:clickable="false"/>
+        android:background="@drawable/rectangle"
+        android:text="6"/>
 
 </LinearLayout>
