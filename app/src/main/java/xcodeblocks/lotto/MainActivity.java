@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TextView[] lottoNumbers = new TextView[6];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
-        lottoNumbers[0].setText("");
+        for (TextView each: lottoNumbers) {             //(빈칸으로 초기화)
+            each.setText("");
+        }
 
         //[확인(debugging)용]
         Lotto lottoTest = new Lotto();              //(객체 생성)
