@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 */
+    int NUMBER_SEL = 6;             //FIXME: (Lotto.java(클래스)에서 전역으로 선언한 변수가 인식이 않됨!!) -- (-> 여기서 지역변수로 재선언)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +43,24 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 //[숫자들 출력하는 TextView 선언+초기화]
-        TextView[] lottoNumbers = new TextView[6];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
-        for (TextView each: lottoNumbers) {             //(빈칸으로 초기화)
-            each.setText("");
+        TextView[] lottoNumbers = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
+        for (TextView each: lottoNumbers) {             //(확장형 for문: 빈칸으로 초기화)
+            /* TODO: **<긴급>: (여기서 에러 않 나게) 적당히 내용 없는 문자열 (객체)를(이라도) (each가) 가리키도록 하여 nullPointerException을 고친다!...(이어짐)
+                            -- 처음에 빈칸만 출력되게 하는 부분 고칠 것!!] **
+             */
+            each.setText(" ");
         }
 
         //[확인(debugging)용]
-        Lotto lottoTest = new Lotto();              //(객체 생성)
+        Lotto lottoTest = new Lotto();              //(객체 생성 (+숫자 생성) )
         int[] numberArray = lottoTest.getNumbers();     //(임시 저장 -- 숫자 배열 대신 저장)
         String str = null;                              //(임시 저장 -- logcat으로 갈 문자열)
-        for(int x = 0; x < numberArray.length ; x ++)       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
-            {str += ( Integer.toString( numberArray[x] ) + " " );}    //(...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
+        for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
+        {
+            String eachString = Integer.toString( numberArray[x] );     //(숫자 (별로) -> 문자열 변환)
+            lottoNumbers[x].setText(eachString);                        //(해당 값들로 숫자 출력하게...)
+            str += ( eachString + " ");         //(...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
+        }
         Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
 
 // TODO: 2017-06-04: UI: 숫자 출력할 상자에 숫자 배열 값들을 각각 연결시키기
