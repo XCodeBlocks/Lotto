@@ -14,7 +14,8 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@drawable/rectangle"
-        android:text="@string/one"/>
+        android:text="@string/one"
+        android:textSize="20dp" />
 
     <TextView
         android:gravity="center"
@@ -23,7 +24,8 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@drawable/rectangle"
-        android:text="@string/two"/>
+        android:text="@string/two"
+        android:textSize="20dp" />
 
     <TextView
         android:gravity="center"
@@ -32,7 +34,8 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@drawable/rectangle"
-        android:text="3"/>
+        android:text="3"
+        android:textSize="20dp" />
 
     <TextView
         android:gravity="center"
@@ -41,7 +44,8 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@drawable/rectangle"
-        android:text="4"/>
+        android:text="4"
+        android:textSize="20dp" />
 
     <TextView
         android:gravity="center"
@@ -50,7 +54,8 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@drawable/rectangle"
-        android:text="5"/>
+        android:text="5"
+        android:textSize="20dp" />
 
     <TextView
         android:gravity="center"
@@ -59,6 +64,7 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@drawable/rectangle"
-        android:text="6"/>
+        android:text="16"
+        android:textSize="20dp" />
 
 </LinearLayout>

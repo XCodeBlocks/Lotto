@@ -38,7 +38,7 @@ import java.util.Arrays;
 
 public class Lotto {
 //[변수(variable) 선언]
-    private static final int NUMBER_SEL = 6;              //(상수 - 선택하는 숫자 개수)
+    public static final int NUMBER_SEL = 6;              //(상수 - 선택하는 숫자 개수)
     private int[] numbers = new int[NUMBER_SEL];          //(생성 번호 저장 - 상수 사용)  //(성분들 -> 기본 0으로 초기화)
 
 

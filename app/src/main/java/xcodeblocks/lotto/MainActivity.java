@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        TextView[] lottoNumbers = new TextView[6];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
+        lottoNumbers[0].setText("");
+
         //[확인(debugging)용]
         Lotto lottoTest = new Lotto();              //(객체 생성)
         int[] numberArray = lottoTest.getNumbers();     //(임시 저장 -- 숫자 배열 대신 저장)
