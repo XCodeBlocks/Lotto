@@ -24,7 +24,7 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@drawable/rectangle"
-        android:text="@string/two"
+        android:text="22"
         android:textSize="20dp" />
 
     <TextView

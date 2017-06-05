@@ -41,8 +41,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+//[숫자들 출력하는 TextView 선언+초기화]
         TextView[] lottoNumbers = new TextView[6];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
-        lottoNumbers[0].setText("");
+        for (TextView each: lottoNumbers) {             //(빈칸으로 초기화)
+            each.setText("");
+        }
 
         //[확인(debugging)용]
         Lotto lottoTest = new Lotto();              //(객체 생성)
@@ -52,8 +55,7 @@ public class MainActivity extends AppCompatActivity {
             {str += ( Integer.toString( numberArray[x] ) + " " );}    //(...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
         Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
 
-// TODO: 2017-06-04: UI: 숫자 출력할 상자 만들기(맨 위 바를 없애지 않으면서)
-// TODO: 2017-06-04: UI: 숫자를 상자로 (출력되게) 연결시키기
+// TODO: 2017-06-04: UI: 숫자 출력할 상자에 숫자 배열 값들을 각각 연결시키기
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
