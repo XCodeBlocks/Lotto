@@ -7,8 +7,9 @@
     android:layout_margin="8dp"
     tools:context="xcodeblocks.lotto.MainActivity">
 
+<!-- 적용할 배열 index를 기준으로 숫자 넣음 -->
     <TextView
-        android:id="@+id/numbers1"
+        android:id="@+id/numbers0"
         android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -19,7 +20,7 @@
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/numbers2"
+        android:id="@+id/numbers1"
         android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -30,7 +31,7 @@
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/numbers3"
+        android:id="@+id/numbers2"
         android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -41,7 +42,7 @@
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/numbers4"
+        android:id="@+id/numbers3"
         android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -52,7 +53,7 @@
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/numbers5"
+        android:id="@+id/numbers4"
         android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -63,7 +64,7 @@
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/numbers6"
+        android:id="@+id/numbers5"
         android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="50dp"
