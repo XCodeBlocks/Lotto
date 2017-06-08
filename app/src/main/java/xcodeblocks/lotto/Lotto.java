@@ -70,7 +70,6 @@ public class Lotto {
     public static int getRandom(int max) {
         return ( (int) (Math.random() * max) + 1 );       //(원래 double형 결과가 나오는 거라서 & (그냥은) 1 적은 숫자까지만 나옴.) -- (위 '참고'사항 참고)
     }
-// FIXME: (선택 정렬 직접 구현한 것 삭제) -- 기본 제공 메소드 사용
 //[숫자 교환]
     private void swap(int x, int y) {
         int temp = x;

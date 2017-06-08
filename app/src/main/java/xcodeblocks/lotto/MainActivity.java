@@ -43,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 //[숫자들 출력하는 TextView 선언+초기화]
-        TextView[] lottoNumbers = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
-        for (TextView each: lottoNumbers) {             //(확장형 for문: 빈칸으로 초기화)
+        TextView[] numbers_TextView = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
+
+        for (TextView each: numbers_TextView) {             //(확장형 for문: 빈칸으로 초기화)
             /* TODO: **<긴급>: (여기서 에러 않 나게) 적당히 내용 없는 문자열 (객체)를(이라도) (each가) 가리키도록 하여 nullPointerException을 고친다!...(이어짐)
                             -- 처음에 빈칸만 출력되게 하는 부분 고칠 것!!] **
              */
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
         {
             String eachString = Integer.toString( numberArray[x] );     //(숫자 (별로) -> 문자열 변환)
-            lottoNumbers[x].setText(eachString);                        //(해당 값들로 숫자 출력하게...)
+            numbers_TextView[x].setText(eachString);                        //(해당 값들로 숫자 출력하게...)
             str += ( eachString + " ");         //(...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
         }
         Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
