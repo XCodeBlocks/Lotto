@@ -44,11 +44,20 @@ public class MainActivity extends AppCompatActivity {
 
 //[숫자들 출력하는 TextView 선언+초기화]
         TextView[] numbers_TextView = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
+//[각각의 TextView 객체에 할당]
+        numbers_TextView[0] = (TextView) findViewById(R.id.numbers0);
+        numbers_TextView[1] = (TextView) findViewById(R.id.numbers1);
+        numbers_TextView[2] = (TextView) findViewById(R.id.numbers2);
+        numbers_TextView[3] = (TextView) findViewById(R.id.numbers3);
+        numbers_TextView[4] = (TextView) findViewById(R.id.numbers4);
+        numbers_TextView[5] = (TextView) findViewById(R.id.numbers5);
+/* TODO: **<긴급>: (여기서 에러 않 나게) 적당히 내용 없는 문자열 (객체)를(이라도) (each가) 가리키도록 하여 nullPointerException을 고친다!...(이어짐)
+                -- 처음에 빈칸만 출력되게 하는 부분 고칠 것!!] **
+ */
 
-        for (TextView each: numbers_TextView) {             //(확장형 for문: 빈칸으로 초기화)
-            /* TODO: **<긴급>: (여기서 에러 않 나게) 적당히 내용 없는 문자열 (객체)를(이라도) (each가) 가리키도록 하여 nullPointerException을 고친다!...(이어짐)
-                            -- 처음에 빈칸만 출력되게 하는 부분 고칠 것!!] **
-             */
+
+//(확장형 for문: 빈칸으로 초기화)
+        for (TextView each: numbers_TextView) {     //(여기서 '위의 명령'을 이런 식으로 반복할 수 없어서 위로 뺌)
             each.setText(" ");
         }
 
