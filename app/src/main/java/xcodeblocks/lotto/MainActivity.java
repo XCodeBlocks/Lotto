@@ -8,6 +8,10 @@
  * - (logcat 사용 - 출력해서 확인하는 방법):
  * https://stackoverflow.com/questions/38289910/print-on-console-in-android-studio
  * ㄴ (실제로는 아래 코드처럼 사용)
+ *
+ * - (버튼 클릭 이벤트 -- 한 시청자의 제시법 <쓰지는 않을 예정: 이해를 못하겠음>):
+ *  https://stackoverflow.com/questions/4153517/how-exactly-does-the-androidonclick-xml-attribute-differ-from-setonclicklistene
+ *
  */
 
 
@@ -28,12 +32,18 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
-/*
-    static {
-        System.loadLibrary("native-lib");
+
+/*  static {
+      System.loadLibrary("native-lib");
     }
 */
+//(전역 변수 선언)
     int NUMBER_SEL = 6;             //FIXME: (Lotto.java(클래스)에서 전역으로 선언한 변수가 인식이 않됨!!) -- (-> 여기서 지역변수로 재선언)
+    Lotto lottoTest = new Lotto();              //(객체 생성 (+숫자 생성) )
+    //[숫자들 출력하는 TextView 선언+초기화]
+    TextView[] numbers_TextView = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
+    int[] numberArray = lottoTest.getNumbers();     //(getNumbers 메소드에 [] 잇는 대신에 저장할 별도의 숫자 배열 -- 시각상)
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//[숫자들 출력하는 TextView 선언+초기화]
-        TextView[] numbers_TextView = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
-//[각각의 TextView 객체에 할당]
+//[각각의 TextView 객체에 할당]     -- (선언은 위에서 미리)
         numbers_TextView[0] = (TextView) findViewById(R.id.numbers0);
         numbers_TextView[1] = (TextView) findViewById(R.id.numbers1);
         numbers_TextView[2] = (TextView) findViewById(R.id.numbers2);
@@ -62,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //[확인(debugging)용]
-        Lotto lottoTest = new Lotto();              //(객체 생성 (+숫자 생성) )
-        int[] numberArray = lottoTest.getNumbers();     //(임시 저장 -- 숫자 배열 대신 저장)
         String str = null;                              //(임시 저장 -- logcat으로 갈 문자열)
         for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
         {
