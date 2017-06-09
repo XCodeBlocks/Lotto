@@ -7,11 +7,12 @@
     android:layout_margin="8dp"
     tools:context="xcodeblocks.lotto.MainActivity">
 
+<!--TODO :(우선순위 나중): 크기(?) 조정 등을 통해 가로로 돌려도 정사각형이 나오게 조절!! -->
 <!-- 적용할 배열 index를 기준으로 숫자 넣음 -->
     <TextView
         android:id="@+id/numbers0"
         android:gravity="center"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         android:layout_weight="1"
@@ -22,7 +23,7 @@
     <TextView
         android:id="@+id/numbers1"
         android:gravity="center"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         android:layout_weight="1"
@@ -33,7 +34,7 @@
     <TextView
         android:id="@+id/numbers2"
         android:gravity="center"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         android:layout_weight="1"
@@ -44,7 +45,7 @@
     <TextView
         android:id="@+id/numbers3"
         android:gravity="center"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         android:layout_weight="1"
@@ -55,7 +56,7 @@
     <TextView
         android:id="@+id/numbers4"
         android:gravity="center"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         android:layout_weight="1"
@@ -66,7 +67,7 @@
     <TextView
         android:id="@+id/numbers5"
         android:gravity="center"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         android:layout_weight="1"

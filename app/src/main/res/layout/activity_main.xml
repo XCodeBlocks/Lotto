@@ -17,7 +17,7 @@
     <include layout="@layout/content_main" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_generate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="생성 버튼" />
