@@ -1,7 +1,8 @@
 <resources>
 
+<!--FIXME: (액션바 색깔 바꾸기): https://stackoverflow.com/questions/36338685/android-changing-action-bar-color -->
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

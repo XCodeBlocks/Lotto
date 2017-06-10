@@ -7,12 +7,12 @@
     android:orientation="vertical"
     tools:context="xcodeblocks.lotto.MainActivity">
 
-<!-- TODO: 액션바 색상 (더 연한 (파란)색으로) 변경 -->
+<!-- Design 모드로 들어가 색상 변경 -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@android:color/holo_blue_bright"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <include layout="@layout/content_main" />
