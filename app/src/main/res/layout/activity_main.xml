@@ -19,6 +19,7 @@
 
     <Button
         android:id="@+id/button_generate"
+        android:layout_margin="10sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="생성 버튼" />
