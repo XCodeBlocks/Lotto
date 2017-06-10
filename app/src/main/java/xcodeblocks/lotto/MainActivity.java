@@ -78,11 +78,13 @@ public class MainActivity extends AppCompatActivity {
             each.setText(" ");
         }
 
-//[버튼 터치(클릭) 이벤트]           //TODO: 버튼 클릭할때마다 번호가 바뀌게 (Lotto 클래스) 변경!
+//[버튼 터치(클릭) 이벤트]
         button_generate.setOnTouchListener( new View.OnTouchListener()
         {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                lottoTest.numbersGenerate();        //(랜덤 숫자 생성 - 누를때마다 실행되므로 매번 달라지게 됨)
+
                 String str = null;                              //(임시 저장 -- logcat으로 갈 문자열(DEBUG).)
                 for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
                 {
@@ -96,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         );
-
-// TODO: 2017-06-04: UI: 숫자 출력할 상자에 숫자 배열 값들을 각각 연결시키기
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText( getApplicationContext(), "For debugging purpose!\n(I manually added from the existing code)", Toast.LENGTH_LONG).show();
+            Toast.makeText( getApplicationContext(), "For debugging purpose!\n(I manually added from the default code)", Toast.LENGTH_LONG).show();
             return true;
         }
 

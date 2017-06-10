@@ -44,6 +44,10 @@ public class Lotto {
 
 //[생성자(constructor)]
     public Lotto() {
+
+    }
+//[실행될때마다 랜덤 생성]
+    public void numbersGenerate() {
     //[[1: 6개 랜덤 숫자 뽑기]]
         int index = 0;
         while ( index < NUMBER_SEL ) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
