@@ -23,6 +23,8 @@ package xcodeblocks.lotto;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.view.MotionEvent;
+import android.widget.Button;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     //[숫자들 출력하는 TextView 선언+초기화]
     TextView[] numbers_TextView = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
     int[] numberArray = lottoTest.getNumbers();     //(getNumbers 메소드에 [] 잇는 대신에 저장할 별도의 숫자 배열 -- 시각상(지저분한 것 같아서))
+    Button button_generate;
 
 
     @Override
@@ -62,23 +65,31 @@ public class MainActivity extends AppCompatActivity {
         numbers_TextView[3] = (TextView) findViewById(R.id.numbers3);
         numbers_TextView[4] = (TextView) findViewById(R.id.numbers4);
         numbers_TextView[5] = (TextView) findViewById(R.id.numbers5);
+        button_generate = (Button) findViewById(R.id.button_generate);      //[버튼 객체 할당] -- (선언은 위에서)
 
 //(확장형 for문: 빈칸으로 초기화)
         for (TextView each: numbers_TextView) {     //(여기서 '위의 명령'을 이런 식으로 반복할 수 없어서 위로 뺌)
             each.setText(" ");
         }
 
-        //[확인(debugging)용]
-        String str = null;                              //(임시 저장 -- logcat으로 갈 문자열)
-        for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
+//[버튼 터치(클릭) 이벤트]           //TODO: 버튼 클릭할때마다 번호가 바뀌게 (Lotto 클래스) 변경!
+        button_generate.setOnTouchListener( new View.OnTouchListener()
         {
-            String eachString = Integer.toString( numberArray[x] );     //(숫자 (별로) -> 문자열 변환)
-            numbers_TextView[x].setText(eachString);                        //(해당 값들로 숫자 출력하게...)
-            str += ( eachString + " ");         //(...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                String str = null;                              //(임시 저장 -- logcat으로 갈 문자열(DEBUG).)
+                for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
+                {
+                    String eachString = Integer.toString( numberArray[x] );         //(숫자 (별로) -> 문자열 변환)
+                    numbers_TextView[x].setText(eachString);                        //(해당 값들로 숫자 출력하게...)
+                    str += ( eachString + " ");         //(DEBUG: ...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
+                }
+                Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
+
+                return false;       //(끝)
+            }
         }
-        Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
-
-
+        );
 
 // TODO: 2017-06-04: UI: 숫자 출력할 상자에 숫자 배열 값들을 각각 연결시키기
 
