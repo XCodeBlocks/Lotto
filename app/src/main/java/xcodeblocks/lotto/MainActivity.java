@@ -33,6 +33,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,15 +101,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
             }
         });
-/*
-        // Example of a call to a native method
+
+/*      // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
-*/
-    }
+*/   }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -124,8 +123,19 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+//[숫자 보여주기 초기화 - 메뉴 버튼 구현]
+        if (id == R.id.action_reset) {
+            //(확장형 for문: 6칸 모두 숫자 없애기(빈칸으로 다시 표시))
+            for (TextView each: numbers_TextView) {
+                each.setText(" ");
+            }
+            Toast.makeText( getApplicationContext(), "빈칸으로 초기화됐습니다!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //TODO: (토스트 출력)
             return true;
         }
 
