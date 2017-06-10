@@ -8,6 +8,11 @@
  *  //[방향]: 일단 그때그때 필요한 변수들을 그 자리에서 부르고(정말 그렇게 하면 않되는 경우에만 다른 곳에 선언) 진행하고 나서
  *            어느정도 (코드가) 되었다 싶을때 선언들만 (메소드들) 밖으로 빼서 (클래스) 전역으로 선언. -- (처음부터 어렵다면)
  *
+ * - (프리뷰(preview) 화면에서 한글 깨지는 현상 수정:
+ *   http://hearit.tistory.com/23
+ *   http://thdev.tech/androiddev/2016/09/21/Android-Studio-Layout-Preview-Not-Korean.html
+ *
+ *
  * - (logcat 사용 - 출력해서 확인하는 방법):
  * https://stackoverflow.com/questions/38289910/print-on-console-in-android-studio
  * ㄴ (실제로는 아래 코드처럼 사용)
@@ -109,13 +114,13 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(stringFromJNI());
 */   }
 
+//[menu_main.xml 설정 읽어오기] -- (액션바 메뉴 구현 준비)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -135,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            //TODO: (토스트 출력)
+            Toast.makeText( getApplicationContext(), "For debugging purpose!\n(I manually added from the existing code)", Toast.LENGTH_LONG).show();
             return true;
         }
 
