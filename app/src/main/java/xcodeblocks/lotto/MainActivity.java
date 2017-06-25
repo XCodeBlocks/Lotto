@@ -19,11 +19,14 @@
  *
  * - (Intent를 이용하여 (특정 링크로) 브라우저 띄우기):
  *   http://bitsoul.tistory.com/36
+ *
  * - (스위치(switch)로 토글 이벤트 처리):
  *  http://cosmosjs.blog.me/220728864491
  *  https://stackoverflow.com/questions/11278507/android-widget-switch-on-off-event-listener
  *  http://gakari.tistory.com/entry/안드로이드-스위치Switch-만들어서-편리하게-토글하기
  *  http://abhiandroid.com/ui/switch
+ *  - (스낵바(snack bar) - 스위치 이벤트에서):
+ *  http://www.truiton.com/2015/06/android-snackbar-example/
  *
  *
  * - (버튼 클릭 이벤트 -- 한 시청자의 제시법 <쓰지는 않을 예정: 이해를 못하겠음>):
@@ -66,8 +69,9 @@ public class MainActivity extends AppCompatActivity {
     //[숫자들 출력하는 TextView 선언+초기화]
     TextView[] numbers_TextView = new TextView[NUMBER_SEL];     //(숫자 상자)          //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
     int[] numberArray = lottoTest.getNumbers();     //(getNumbers 메소드에 [] 잇는 대신에 저장할 별도의 숫자 배열 -- 시각상(지저분한 것 같아서))
-    Button button_generate;         //(랜덤 숫자 발생 버튼)
-    Switch switch_freqToggle;       //(자주 나오는 숫자 반영 여부 스위치)
+    Button button_generate;             //(랜덤 숫자 발생 버튼)
+    Switch switch_freqToggle;           //(자주 나오는 숫자 반영 여부 스위치)
+    boolean isSwitchChecked = false;    //(스위치 체크 여부 -> 랜덤 숫자 생성에 영향!)
 
 
     @Override
@@ -119,10 +123,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 //[스위치 동작 실제 부분]
+                isSwitchChecked = isChecked;        //(어느쪽이든 똑같은 부분)
                 if (isChecked) {        //[on일때]
                     Snackbar.make(buttonView, "'자주 뽑히는 숫자'들이 뽑기에 반영됩니다!", Snackbar.LENGTH_SHORT).show();
+
                 } else {                        //[off일때]
                     Snackbar.make(buttonView, "'자주 뽑히는 숫자'들을 뽑기에 반영하지 않습니다!", Snackbar.LENGTH_SHORT).show();
+
                 }
             }
         });
