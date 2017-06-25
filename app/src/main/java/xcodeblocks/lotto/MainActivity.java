@@ -118,10 +118,12 @@ public class MainActivity extends AppCompatActivity {
         switch_freqToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                //(debug)
-                Snackbar.make(buttonView, "'자주 뽑히는 숫자'를 뽑기에 반영하는지 여부를 변경합니다...", Snackbar.LENGTH_SHORT).show();
                 //[스위치 동작 실제 부분]
-
+                if (isChecked) {        //[on일때]
+                    Snackbar.make(buttonView, "'자주 뽑히는 숫자'들이 뽑기에 반영됩니다!", Snackbar.LENGTH_SHORT).show();
+                } else {                        //[off일때]
+                    Snackbar.make(buttonView, "'자주 뽑히는 숫자'들을 뽑기에 반영하지 않습니다!", Snackbar.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -134,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();      */
                 Toast.makeText(getApplicationContext(), "로또와 관련된 사이트로 연결됩니다...", Toast.LENGTH_SHORT).show();
 
-                Intent intent_browser = new Intent( Intent.ACTION_VIEW, Uri.parse("http://www.nlotto.co.kr/gameResult.do?method=byWin") );
+                Intent intent_browser = new Intent( Intent.ACTION_VIEW, Uri.parse("http://www.nlotto.co.kr/gameResult.do?method=statByNumber") );
                 // intent.setPackage("com.android.chrome");     //(특정 앱으로 지정)
                 startActivity(intent_browser);
             }
