@@ -8,7 +8,7 @@
  *  //[방향]: 일단 그때그때 필요한 변수들을 그 자리에서 부르고(정말 그렇게 하면 않되는 경우에만 다른 곳에 선언) 진행하고 나서
  *            어느정도 (코드가) 되었다 싶을때 선언들만 (메소드들) 밖으로 빼서 (클래스) 전역으로 선언. -- (처음부터 어렵다면)
  *
- * - (프리뷰(preview) 화면에서 한글 깨지는 현상 수정:
+ * - (프리뷰(preview) 화면에서 한글 깨지는 현상 수정):
  *   http://hearit.tistory.com/23
  *   http://thdev.tech/androiddev/2016/09/21/Android-Studio-Layout-Preview-Not-Korean.html
  *
@@ -16,6 +16,9 @@
  * - (logcat 사용 - 출력해서 확인하는 방법):
  * https://stackoverflow.com/questions/38289910/print-on-console-in-android-studio
  * ㄴ (실제로는 아래 코드처럼 사용)
+ *
+ * - (Intent를 이용하여 (특정 링크로) 브라우저 띄우기):
+ *   http://bitsoul.tistory.com/36
  *
  * - (버튼 클릭 이벤트 -- 한 시청자의 제시법 <쓰지는 않을 예정: 이해를 못하겠음>):
  *  https://stackoverflow.com/questions/4153517/how-exactly-does-the-androidonclick-xml-attribute-differ-from-setonclicklistene
@@ -25,6 +28,8 @@
 
 package xcodeblocks.lotto;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -101,11 +106,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+/*                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();      */
+                Toast.makeText(getApplicationContext(), "로또와 관련된 사이트로 연결됩니다...", Toast.LENGTH_SHORT).show();
+
+                Intent intent_browser = new Intent( Intent.ACTION_VIEW, Uri.parse("http://www.nlotto.co.kr/gameResult.do?method=byWin") );
+                // intent.setPackage("com.android.chrome");     //(특정 앱으로 지정)
+                startActivity(intent_browser);
             }
         });
 
