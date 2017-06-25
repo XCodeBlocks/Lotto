@@ -41,6 +41,7 @@ import android.util.Log;
 
 import android.view.MotionEvent;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
@@ -114,7 +115,15 @@ public class MainActivity extends AppCompatActivity {
         }
         );
 //[스위치 터치(클릭) 이벤트]
+        switch_freqToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                //(debug)
+                Snackbar.make(buttonView, "'자주 뽑히는 숫자'를 뽑기에 반영하는지 여부를 변경합니다...", Snackbar.LENGTH_SHORT).show();
+                //[스위치 동작 실제 부분]
 
+            }
+        });
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
