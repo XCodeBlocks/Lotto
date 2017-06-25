@@ -64,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
     int NUMBER_SEL = 6;             //FIXME: (Lotto.java(클래스)에서 전역으로 선언한 변수가 인식이 않됨!!) -- (-> 여기서 지역변수로 재선언)
     Lotto lottoTest = new Lotto();                          //(객체 생성 (+숫자 생성) )
     //[숫자들 출력하는 TextView 선언+초기화]
-    TextView[] numbers_TextView = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
+    TextView[] numbers_TextView = new TextView[NUMBER_SEL];     //(숫자 상자)          //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
     int[] numberArray = lottoTest.getNumbers();     //(getNumbers 메소드에 [] 잇는 대신에 저장할 별도의 숫자 배열 -- 시각상(지저분한 것 같아서))
-    Button button_generate;
-    Switch switch_freqToggle;
+    Button button_generate;         //(랜덤 숫자 발생 버튼)
+    Switch switch_freqToggle;       //(자주 나오는 숫자 반영 여부 스위치)
 
 
     @Override
