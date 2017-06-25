@@ -19,6 +19,11 @@
  *
  * - (Intent를 이용하여 (특정 링크로) 브라우저 띄우기):
  *   http://bitsoul.tistory.com/36
+ * - (스위치(switch)로 토글 이벤트 처리):
+ *  http://cosmosjs.blog.me/220728864491
+ *  https://stackoverflow.com/questions/11278507/android-widget-switch-on-off-event-listener
+ *  http://abhiandroid.com/ui/switch
+ *
  *
  * - (버튼 클릭 이벤트 -- 한 시청자의 제시법 <쓰지는 않을 예정: 이해를 못하겠음>):
  *  https://stackoverflow.com/questions/4153517/how-exactly-does-the-androidonclick-xml-attribute-differ-from-setonclicklistene

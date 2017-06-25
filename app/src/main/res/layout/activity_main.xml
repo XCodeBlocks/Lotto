@@ -17,6 +17,13 @@
 
     <include layout="@layout/content_main" />
 
+    <Switch
+        android:id="@+id/switch_frequentNumbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="자주 뽑힌 번호 더 뽑히게 하기 >" />
+
     <Button
         android:id="@+id/button_generate"
         android:layout_margin="10sp"
