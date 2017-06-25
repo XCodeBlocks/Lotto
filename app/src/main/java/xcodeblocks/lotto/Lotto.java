@@ -50,9 +50,14 @@ public class Lotto {
     public void numbersGenerate(boolean flag) {     //(flag: 스위치 적용 여부 = '자주 뽑히는 숫자들' 반영 여부)
     //[[1: 6개 랜덤 숫자 뽑기]]
         int index = 0;
+        int rnd = 0;
         while ( index < NUMBER_SEL ) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
-            int rnd = getRandom(45);    //(-> 외부 메소드)
+            if (flag) {             //[switch 'on'] -- (특정 숫자들에 가중 확률을 줘서 더 높은 확률로 뽑히게 하기)
+
+            } else {                //[switch 'off] -- (그냥 45개 숫자 중에서 무작위로 뽑기)
+                rnd = getRandom(45);    //(-> 외부 메소드)
+            }
             //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
             boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
             for (int pickedNum: numbers) {          //(확장형 for문)
