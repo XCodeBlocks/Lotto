@@ -22,6 +22,7 @@
  * - (스위치(switch)로 토글 이벤트 처리):
  *  http://cosmosjs.blog.me/220728864491
  *  https://stackoverflow.com/questions/11278507/android-widget-switch-on-off-event-listener
+ *  http://gakari.tistory.com/entry/안드로이드-스위치Switch-만들어서-편리하게-토글하기
  *  http://abhiandroid.com/ui/switch
  *
  *
@@ -40,6 +41,7 @@ import android.util.Log;
 
 import android.view.MotionEvent;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     TextView[] numbers_TextView = new TextView[NUMBER_SEL];               //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
     int[] numberArray = lottoTest.getNumbers();     //(getNumbers 메소드에 [] 잇는 대신에 저장할 별도의 숫자 배열 -- 시각상(지저분한 것 같아서))
     Button button_generate;
+    Switch switch_freqToggle;
 
 
     @Override
@@ -74,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("로또 번호 생성 앱");             //(제목(맨 윗줄) 내용 변경)
 
-//[각각의 TextView 객체 할당]     -- (선언은 위에서 미리...)
+//[버튼 생성]
+    //[각각의 TextView 객체 할당]     -- (선언은 위에서 미리...)
         numbers_TextView[0] = (TextView) findViewById(R.id.numbers0);
         numbers_TextView[1] = (TextView) findViewById(R.id.numbers1);
         numbers_TextView[2] = (TextView) findViewById(R.id.numbers2);
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         numbers_TextView[4] = (TextView) findViewById(R.id.numbers4);
         numbers_TextView[5] = (TextView) findViewById(R.id.numbers5);
         button_generate = (Button) findViewById(R.id.button_generate);      //[버튼 객체 할당] -- (선언은 위에서)
+        switch_freqToggle = (Switch) findViewById(R.id.switch_frequentNumbers);
 
 //(확장형 for문: 빈칸으로 초기화)
         for (TextView each: numbers_TextView) {     //(여기서 '위의 명령'을 이런 식으로 반복할 수 없어서 위로 뺌)
@@ -108,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         );
+//[스위치 터치(클릭) 이벤트]
+
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
