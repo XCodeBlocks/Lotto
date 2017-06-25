@@ -47,14 +47,14 @@ public class Lotto {
 
     }
 //[실행될때마다 랜덤 생성]
-    public void numbersGenerate() {
+    public void numbersGenerate(boolean flag) {     //(flag: 스위치 적용 여부 = '자주 뽑히는 숫자들' 반영 여부)
     //[[1: 6개 랜덤 숫자 뽑기]]
         int index = 0;
         while ( index < NUMBER_SEL ) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
             int rnd = getRandom(45);    //(-> 외부 메소드)
-            boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
             //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
+            boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
             for (int pickedNum: numbers) {          //(확장형 for문)
                 if (rnd == pickedNum) {     //(이미 뽑은 숫자와 겹치면...)
                     isDup = true;   break;  //(... 다음 index로 넘어가지 못하게 방지.)
