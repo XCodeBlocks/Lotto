@@ -47,13 +47,20 @@ public class Lotto {
 
     }
 //[실행될때마다 랜덤 생성]
-    public void numbersGenerate(boolean flag) {     //(flag: 스위치 적용 여부 = '자주 뽑히는 숫자들' 반영 여부)
+    public void numbersGenerate(boolean flag) {     //(flag: 스위치 적용 여부 = '자주 뽑히는 숫자들' 반영 여부 -- <발표 자료> 참고)
     //[[1: 6개 랜덤 숫자 뽑기]]
         int index = 0;
         int rnd = 0;
         while ( index < NUMBER_SEL ) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
             if (flag) {             //[switch 'on'] -- (특정 숫자들에 가중 확률을 줘서 더 높은 확률로 뽑히게 하기)
+                //(1: '우선순위 숫자들' 뽑힐 여부 판단) -- (비율은 (우선순위):(전체) = 8:2)
+                int probability = getRandom(10);    //('우선순위 숫자'가 뽑힐 여부)
+                if (probability < 8) {      //('우선순위 숫자')
+                    // TODO: 우선순위 숫자 인덱스 뽑기
+                } else {                    //(전체)
+                    rnd = getRandom(45);    //(-> 외부 메소드)
+                }
 
             } else {                //[switch 'off] -- (그냥 45개 숫자 중에서 무작위로 뽑기)
                 rnd = getRandom(45);    //(-> 외부 메소드)
