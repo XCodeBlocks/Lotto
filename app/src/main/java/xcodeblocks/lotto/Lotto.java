@@ -40,6 +40,7 @@ public class Lotto {
 //[변수(variable) 선언]
     public static final int NUMBER_SEL = 6;              //(상수 - 선택하는 숫자 개수)
     private int[] numbers = new int[NUMBER_SEL];          //(생성 번호 저장 - 상수 사용)  //(성분들 -> 기본 0으로 초기화)
+    private int[] frequentNumbers = {27, 1, 43, 20, 40, 17, 34, 37, 4, 13};     //(-- 2017/06/26 기준으로 상위 10개 숫자들)
 
 
 //[생성자(constructor)]
@@ -49,20 +50,21 @@ public class Lotto {
 //[실행될때마다 랜덤 생성]
     public void numbersGenerate(boolean flag) {     //(flag: 스위치 적용 여부 = '자주 뽑히는 숫자들' 반영 여부 -- <발표 자료> 참고)
     //[[1: 6개 랜덤 숫자 뽑기]]
-        int index = 0;
+        int index = 0;      //(전체 숫자 배열 인덱스)
         int rnd = 0;
         while ( index < NUMBER_SEL ) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
             //[1: 일단 1개씩 생성]
             if (flag) {             //[switch 'on'] -- (특정 숫자들에 가중 확률을 줘서 더 높은 확률로 뽑히게 하기)
-                //(1: '우선순위 숫자들' 뽑힐 여부 판단) -- (비율은 (우선순위):(전체) = 8:2)
-                int probability = getRandom(10);    //('우선순위 숫자'가 뽑힐 여부)
-                if (probability < 8) {      //('우선순위 숫자')
-                    // TODO: 우선순위 숫자 인덱스 뽑기
+                //(1: '우선순위 숫자들' 뽑힐 여부 판단) -- (비율은 (우선순위):(전체) = 75:25)
+                int probability = getRandom(100);    //('우선순위 숫자'가 뽑힐 여부)
+                if (probability < 75) {      //('우선순위 숫자') - (간접적으로 뽑기)       //(이미 만들어 놓은 메소드 사용)
+                    int random_index = getRandom(frequentNumbers.length) - 1;   //(랜덤으로 ('우선순위 숫자' 중에서) 뽑을 성분의 인덱스(-전체 아님)부터 뽑고...)
+                    rnd = frequentNumbers[random_index];                        //(...뽑은 인덱스에 해당하는 수를 결과로 내보냄.)
                 } else {                    //(전체)
                     rnd = getRandom(45);    //(-> 외부 메소드)
                 }
 
-            } else {                //[switch 'off] -- (그냥 45개 숫자 중에서 무작위로 뽑기)
+            }else {                //[switch 'off] -- (그냥 45개 숫자 중에서 무작위로 뽑기)
                 rnd = getRandom(45);    //(-> 외부 메소드)
             }
             //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
