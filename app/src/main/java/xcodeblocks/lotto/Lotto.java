@@ -31,6 +31,10 @@ import java.util.Arrays;
  *
  * -(숫자 랜덤 생성): http://www.java67.com/2015/01/how-to-get-random-number-between-0-and-1-java.html
  *              ㄴ (추가): (getRandom() 메소드 추가 설명으로...)
+ *  ㄴ(cf. 배열에서 랜덤으로 성분 뽑기 - (실제 사용은 않함):
+ *  https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
+ *  https://stackoverflow.com/questions/9055287/select-a-random-value-from-an-array
+ *
  * -( Arrays.sort(배열명) ): http://emflant.tistory.com/210
  *
  */
