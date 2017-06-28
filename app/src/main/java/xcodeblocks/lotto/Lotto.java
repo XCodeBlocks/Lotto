@@ -44,7 +44,7 @@ public class Lotto {
 //[변수(variable) 선언]
     public static final int NUMBER_SEL = 6;              //(상수 - 선택하는 숫자 개수)
     private int[] numbers = new int[NUMBER_SEL];          //(생성 번호 저장 - 상수 사용)  //(성분들 -> 기본 0으로 초기화)
-    private int[] frequentNumbers = {27, 1, 43, 20, 40, 17, 34, 37, 4, 13};     //(-- 2017/06/26 기준으로 상위 10개 숫자들)
+    public final int[] frequentNumbers = {27, 1, 43, 20, 40, 17, 34, 37, 4, 13};     //(-- 2017/06/26 기준으로 상위 10개 숫자들)
 
 
 //[생성자(constructor)]
