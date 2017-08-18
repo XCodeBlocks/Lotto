@@ -93,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
         button_generate = (Button) findViewById(R.id.button_generate);      //[assign button objects] -- (already declared above)
         switch_freqToggle = (Switch) findViewById(R.id.switch_frequentNumbers);
 
-//(확장형 for문: 빈칸으로 초기화)
-        for (TextView each: numbers_TextView) {     //(여기서 '위의 명령'을 이런 식으로 반복할 수 없어서 위로 뺌)
+//('enhanced for loop': initialize to blanks)
+        for (TextView each: numbers_TextView) {     //(assigning cannot be done here(make it repeatable here) (as above) -- so it's pulled above)
             each.setText(" ");
         }
 
