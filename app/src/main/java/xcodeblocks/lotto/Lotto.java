@@ -14,13 +14,13 @@ import java.util.Arrays;
  *                               (http://itmir.tistory.com/310 --> #9-3 entry)
  *
  * --(reference):
- * //(특정 버전으로 되돌리기): (필요시 브랜치(branch) 변경) -> 특정 커밋 선택(우클릭) -> 'Reset Current Branch to Here' 선택
- *                         -> 4가지 옵션 중 적당한 것을 고름(아마도 로컬 브랜치만 원격 브랜치와 맞출 거라면 그냥 'keep' 고르면 될 듯?)
- *                         -> HEAD도 같이 그 커밋(revision) 바뀜
- *                         -> (이 커밋(revision)아닌 최신 버전(의 브랜치)이 다시 필요하면 위의 '브랜치 바꾸고 Reset 과정' 반복.)
- *  ㄴ(출처): (자세한 설명): https://git-scm.com/book/ko/v2/Git-도구-Reset-명확히-알고-가기
- *           (간략한 개념): https://backlogtool.com/git-guide/kr/stepup/stepup6_3.html
- *           (추가 명령 (revert)): https://tuwlab.com/ece/22223
+ * //(revert to specific version): (change 'branch' if needed) -> select specific commit(right click) -> select'Reset Current Branch to Here'
+ *                         -> select suitable option out of 4(maybe 'keep' is ok if it's just to sync local branch to remote branch?)
+ *                         -> HEAD will be also changed to that commit(revision)
+ *                         -> (if (branch that has) latest version is needed, do this process(change branch then Reset) again.)
+ *  ㄴ(source): (detailed explanation): https://git-scm.com/book/ko/v2/Git-도구-Reset-명확히-알고-가기
+ *           (simple concept): https://backlogtool.com/git-guide/kr/stepup/stepup6_3.html
+ *           (additional command (revert)): https://tuwlab.com/ece/22223
  *  |
  * //(안전하지 않은 방법인 듯 -- 위의 방법으로 대체):
  *      -(특정 버전으로 되돌리기): (안드로이드 스튜디오에서는... 해당 브랜치 우클릭->Checkout Revision 하면 됨.) http://opendive.blogspot.kr/2015/06/git.html
