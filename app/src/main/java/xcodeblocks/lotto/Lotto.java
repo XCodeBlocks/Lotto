@@ -47,29 +47,29 @@ public class Lotto {
     public final int[] frequentNumbers = {27, 1, 43, 20, 40, 17, 34, 37, 4, 13};     //(-- top 10 numbers in 2017/06/26)
 
 
-//[생성자(constructor)]
+//[constructor]
     public Lotto() {
 
     }
-//[실행될때마다 랜덤 생성]
-    public void numbersGenerate(boolean flag) {     //(flag: 스위치 적용 여부 = '자주 뽑히는 숫자들' 반영 여부 -- <발표 자료> 참고)
-    //[[1: 6개 랜덤 숫자 뽑기]]
-        int index = 0;      //(전체 숫자 배열 인덱스)
+//[generate random numbers whenever executed(called)]
+    public void numbersGenerate(boolean flag) {     //(flag: whether switch is on = whether 'frequently picked numbers' are reflected)
+    //[[1: pick 6 random numbers]]
+        int index = 0;      //(index of 6 number array)
         int rnd = 0;
-        while ( index < NUMBER_SEL ) {       //(그냥 무조건 다음 index로 넘어가면 안되므로 (for문 안씀))
-            //[1: 일단 1개씩 생성]
-            if (flag) {             //[switch 'on'] -- (특정 숫자들에 가중 확률을 줘서 더 높은 확률로 뽑히게 하기)
-                //(1: '우선순위 숫자들' 뽑힐 여부 판단) -- (비율은 (우선순위):(전체) = 75:25)
-                int probability = getRandom(100);    //('우선순위 숫자'가 뽑힐 여부)
-                if (probability < 75) {      //('우선순위 숫자') - (간접적으로 뽑기)       //(이미 만들어 놓은 메소드 사용)
-                    int random_index = getRandom(frequentNumbers.length) - 1;   //(랜덤으로 ('우선순위 숫자' 중에서) 뽑을 성분의 인덱스(-전체 아님)부터 뽑고...)
-                    rnd = frequentNumbers[random_index];                        //(...뽑은 인덱스에 해당하는 수를 결과로 내보냄.)
-                } else {                    //(전체)
-                    rnd = getRandom(45);    //(-> 외부 메소드)
+        while ( index < NUMBER_SEL ) {       //(index should not automatically move to next (so for loop is not used))
+            //[1: create each 1]
+            if (flag) {             //[switch 'on'] -- (give weight to 'specific numbers' to make them picked in higher probability)
+                //(1: determine whether 'priority numbers' will be picked) -- (ratio here is (priority):(all) = 75:25)
+                int probability = getRandom(100);    //(the probability of 'priority number' will be picked -- think this as number of % !)
+                if (probability < 75) {      //(from 'priority numbers') - (pick indirectly)       //(using method that is made already)
+                    int random_index = getRandom(frequentNumbers.length) - 1;   //(first, randomly pick index of 'priority numbers'(--not the all (45) numbers)...)
+                    rnd = frequentNumbers[random_index];                        //(...then save the (priority) number corresponding to picked index as output.)
+                } else {                    //(from all numbers)
+                    rnd = getRandom(45);    //(-> external method)
                 }
 
-            }else {                //[switch 'off] -- (그냥 45개 숫자 중에서 무작위로 뽑기)
-                rnd = getRandom(45);    //(-> 외부 메소드)
+            }else {                //[switch 'off] -- (just (randomly) pick number from all 45)
+                rnd = getRandom(45);    //(-> external method)
             }
             //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
             boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
