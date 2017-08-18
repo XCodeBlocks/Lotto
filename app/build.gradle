@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "xcodeblocks.lotto"
-        minSdkVersion 21                //(layout 때문에 변경(19 -> 21))
+        minSdkVersion 21                //(changed because of layout(19 -> 21) -- Material design is applicable only in >21)
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
