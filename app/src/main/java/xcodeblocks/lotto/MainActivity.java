@@ -141,10 +141,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 /*                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();      */
-                Toast.makeText(getApplicationContext(), "로또와 관련된 사이트로 연결됩니다...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "redirecting to site related to lotto...", Toast.LENGTH_SHORT).show();
 
-                Intent intent_browser = new Intent( Intent.ACTION_VIEW, Uri.parse("http://www.nlotto.co.kr/gameResult.do?method=statByNumber") );
-                // intent.setPackage("com.android.chrome");     //(특정 앱으로 지정)
+                Intent intent_browser = new Intent( Intent.ACTION_VIEW, Uri.parse("http://www.nlotto.co.kr/gameResult.do?method=statByNumber") );       //([only for English version]: sorry I don't know if there is English site to link that has similar information :P imma just leave the page link as it was :P )
+                // intent.setPackage("com.android.chrome");     //(uncomment this if you want the app to use specific app)
                 startActivity(intent_browser);
             }
         });
