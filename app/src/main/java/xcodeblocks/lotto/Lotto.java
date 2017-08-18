@@ -1,5 +1,5 @@
-//[실제 기능 모음]
-//(필요하면 현재 코드를 일반 Java 환경에서 테스트해볼 것! (온라인 컴파일러 이용))
+//[collection of actual functions]
+//(test this code in normal Java environment if needed (online compilers can be used))
 
 package xcodeblocks.lotto;
 
