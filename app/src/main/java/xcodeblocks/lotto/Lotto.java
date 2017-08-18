@@ -41,10 +41,10 @@ import java.util.Arrays;
 
 
 public class Lotto {
-//[변수(variable) 선언]
-    public static final int NUMBER_SEL = 6;              //(상수 - 선택하는 숫자 개수)
-    private int[] numbers = new int[NUMBER_SEL];          //(생성 번호 저장 - 상수 사용)  //(성분들 -> 기본 0으로 초기화)
-    public final int[] frequentNumbers = {27, 1, 43, 20, 40, 17, 34, 37, 4, 13};     //(-- 2017/06/26 기준으로 상위 10개 숫자들)
+//[variable declaration]
+    public static final int NUMBER_SEL = 6;              //(constant - number of numbers chosen)
+    private int[] numbers = new int[NUMBER_SEL];          //(saving generated numbers - using constant)  //(elements -> resetted to 0 by default)
+    public final int[] frequentNumbers = {27, 1, 43, 20, 40, 17, 34, 37, 4, 13};     //(-- top 10 numbers in 2017/06/26)
 
 
 //[생성자(constructor)]
