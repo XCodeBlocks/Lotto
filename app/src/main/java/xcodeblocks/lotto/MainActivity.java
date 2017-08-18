@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 */
 //[전역 변수 선언]
-    int NUMBER_SEL = 6;             //FIXME: (Lotto.java(클래스)에서 전역으로 선언한 변수가 인식이 않됨!!) -- (-> 여기서 지역변수로 재선언)
+    int NUMBER_SEL = 6;             //FIXME: (variable that is globally declared(static) in Lotto.java(class) is not recognized!!) -- (-> re-declared here as local(workaround :P ))
     Lotto lottoTest = new Lotto();                          //(객체 생성 (+숫자 생성) )
     //[숫자들 출력하는 TextView 선언+초기화]
     TextView[] numbers_TextView = new TextView[NUMBER_SEL];     //(숫자 상자)          //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
