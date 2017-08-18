@@ -3,10 +3,10 @@
 //(Android project: Lotto random number generation)
 
 
-/** [references]:
+/** [references]:       (only in English version): there may be some Korean pages, :P, but at least look at the headlines :P)
  *
- *  //[방향]: 일단 그때그때 필요한 변수들을 그 자리에서 부르고(정말 그렇게 하면 않되는 경우에만 다른 곳에 선언) 진행하고 나서
- *            어느정도 (코드가) 되었다 싶을때 선언들만 (메소드들) 밖으로 빼서 (클래스) 전역으로 선언. -- (처음부터 어렵다면)
+ *  //[overall direction]: First, call the variables I would need at the spot (except those that shouldn't be -- declared elsewhere in that case) and keep going, then
+ *            after code is done to some degree, only take out declaration outside of methods and make them (class) global. -- (if it's hard to do it from the start)
  *
  * - (프리뷰(preview) 화면에서 한글 깨지는 현상 수정):
  *   http://hearit.tistory.com/23
