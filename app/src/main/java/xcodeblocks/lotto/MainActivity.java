@@ -118,17 +118,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         );
-//[스위치 터치(클릭) 이벤트]
+//[switch touch(click) event]
         switch_freqToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                //[스위치 동작 실제 부분]
-                isSwitchChecked = isChecked;        //(어느쪽이든 똑같은 부분)
-                if (isChecked) {        //[on일때]
-                    Snackbar.make(buttonView, "'자주 뽑히는 숫자'들이 뽑기에 반영됩니다!", Snackbar.LENGTH_SHORT).show();
+                //[actual part of switch operation]
+                isSwitchChecked = isChecked;        //(synchronize the state for both)
+                if (isChecked) {        //[if 'on']
+                    Snackbar.make(buttonView, "'frequently picked numbers' will be reflected in generation!", Snackbar.LENGTH_SHORT).show();
 
-                } else {                        //[off일때]
-                    Snackbar.make(buttonView, "'자주 뽑히는 숫자'들을 뽑기에 반영하지 않습니다!", Snackbar.LENGTH_SHORT).show();
+                } else {                        //[if 'off']
+                    Snackbar.make(buttonView, "'frequently picked numbers' will NOT be reflected in generation!'", Snackbar.LENGTH_SHORT).show();
 
                 }
             }
