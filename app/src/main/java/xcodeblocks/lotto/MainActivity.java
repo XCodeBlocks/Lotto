@@ -1,4 +1,4 @@
-//[test code]
+//[English translated code]
 
 //(Android project: Lotto random number generation)
 
@@ -8,28 +8,28 @@
  *  //[overall direction]: First, call the variables I would need at the spot (except those that shouldn't be -- declared elsewhere in that case) and keep going, then
  *            after code is done to some degree, only take out declaration outside of methods and make them (class) global. -- (if it's hard to do it from the start)
  *
- * - (프리뷰(preview) 화면에서 한글 깨지는 현상 수정):
+ * - (fix Korean letters broken in 'preview' screen):
  *   http://hearit.tistory.com/23
  *   http://thdev.tech/androiddev/2016/09/21/Android-Studio-Layout-Preview-Not-Korean.html
  *
  *
- * - (logcat 사용 - 출력해서 확인하는 방법):
+ * - (using 'logcat' - find out by outputting to that):
  * https://stackoverflow.com/questions/38289910/print-on-console-in-android-studio
- * ㄴ (실제로는 아래 코드처럼 사용)
+ * ㄴ (actually used like below code)
  *
- * - (Intent를 이용하여 (특정 링크로) 브라우저 띄우기):
+ * - (using 'Intent' to open up the browser (to specific link)):
  *   http://bitsoul.tistory.com/36
  *
- * - (스위치(switch)로 토글 이벤트 처리):
+ * - (handling toggle event with 'switch'):
  *  http://cosmosjs.blog.me/220728864491
  *  https://stackoverflow.com/questions/11278507/android-widget-switch-on-off-event-listener
  *  http://gakari.tistory.com/entry/안드로이드-스위치Switch-만들어서-편리하게-토글하기
  *  http://abhiandroid.com/ui/switch
- *  - (스낵바(snack bar) - 스위치 이벤트에서):
+ *  - ('snack bar' - at switch event):
  *  http://www.truiton.com/2015/06/android-snackbar-example/
  *
  *
- * - (버튼 클릭 이벤트 -- 한 시청자의 제시법 <쓰지는 않을 예정: 이해를 못하겠음>):
+ * - (button click event -- suggestion from one viewer <not going to be used: coudldn't understand :P >):
  *  https://stackoverflow.com/questions/4153517/how-exactly-does-the-androidonclick-xml-attribute-differ-from-setonclicklistene
  *
  */
