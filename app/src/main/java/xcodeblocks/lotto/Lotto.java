@@ -6,12 +6,12 @@ package xcodeblocks.lotto;
 import java.util.Arrays;
 
 /**
- * Created by XCodeBlocks on 2017-05-29.
+ * Created by XCodeBlocks on 2017-05-29.            //(only in English version): there may be some Korean pages, :P, but at least look at the headlines :P)
  *
- * -(참고): (getRandom() 메소드): 1 더하지 않으면 (return에서) 범위가 (0 ~ (max - 1))로 나온다.
- *                               따라서 이를 (1 ~ max)로 제대로 고치려면 1을 더한다.
+ * -(reference): (getRandom() method): if you don't add 1 (at 'return') range will be (0 ~ (max - 1)).
+ *                               so add 1 to fix the range to (1 ~ max).
  *                              (http://mwultong.blogspot.com/2006/11/java-mathrandom-int.html)
- *                               (http://itmir.tistory.com/310 --> 9-3번 항목)
+ *                               (http://itmir.tistory.com/310 --> #9-3 entry)
  *
  * --(reference):
  * //(특정 버전으로 되돌리기): (필요시 브랜치(branch) 변경) -> 특정 커밋 선택(우클릭) -> 'Reset Current Branch to Here' 선택
