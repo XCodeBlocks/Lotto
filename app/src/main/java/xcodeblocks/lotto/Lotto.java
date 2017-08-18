@@ -71,11 +71,11 @@ public class Lotto {
             }else {                //[switch 'off] -- (just (randomly) pick number from all 45)
                 rnd = getRandom(45);    //(-> external method)
             }
-            //[2: 이것을 (이미 뽑은) 다른 숫자와 중복되는 지 확인]
-            boolean isDup = false;      //(중복여부 스위치 -- while문 돌때마다 이렇게 초기화)
-            for (int pickedNum: numbers) {          //(확장형 for문)
-                if (rnd == pickedNum) {     //(이미 뽑은 숫자와 겹치면...)
-                    isDup = true;   break;  //(... 다음 index로 넘어가지 못하게 방지.)
+            //[2: check this (number) to see if it's duplicate(same as already picked numbers)]
+            boolean isDup = false;      //(switch whether if it's duplicate -- initialized  to this whenever while-looped)
+            for (int pickedNum: numbers) {          //('enhanced for loop')
+                if (rnd == pickedNum) {     //(If it matches the already picked numbers...)
+                    isDup = true;   break;  //(... prevent 'index' from going next.)
                 }
             }
             //[3: 중복이 되지 않을 때만 -> 다음 숫자 뽑기]
