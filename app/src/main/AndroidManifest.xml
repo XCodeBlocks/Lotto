@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xcodeblocks.lotto">
 
-<uses-permission android:name="android.permission.INTERNET" />      <!-- 인터넷 permission 필요하므로 추가! -->
+<uses-permission android:name="android.permission.INTERNET" />      <!-- add this because INTERNET permission is required! -->
 
     <application
         android:allowBackup="true"
