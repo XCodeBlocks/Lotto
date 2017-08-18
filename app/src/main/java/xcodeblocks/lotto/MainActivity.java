@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
       System.loadLibrary("native-lib");
     }
 */
-//[전역 변수 선언]
+//[global variable declaration]
     int NUMBER_SEL = 6;             //FIXME: (variable that is globally declared(static) in Lotto.java(class) is not recognized!!) -- (-> re-declared here as local(workaround :P ))
-    Lotto lottoTest = new Lotto();                          //(객체 생성 (+숫자 생성) )
-    //[숫자들 출력하는 TextView 선언+초기화]
-    TextView[] numbers_TextView = new TextView[NUMBER_SEL];     //(숫자 상자)          //TODO: [왜 전역변수인 NUMBER_SEL 인식이 않되는가 ?!]
+    Lotto lottoTest = new Lotto();                          //(object creation)
+    //[declaring TextView to display numbers + initialization]
+    TextView[] numbers_TextView = new TextView[NUMBER_SEL];     //(number boxes)          //TODO: [why NUMBER_SEL which should be global variable not recognized here?]
     int[] numberArray = lottoTest.getNumbers();     //(getNumbers 메소드에 [] 잇는 대신에 저장할 별도의 숫자 배열 -- 시각상(지저분한 것 같아서))
     Button button_generate;             //(랜덤 숫자 발생 버튼)
     Switch switch_freqToggle;           //(자주 나오는 숫자 반영 여부 스위치)
