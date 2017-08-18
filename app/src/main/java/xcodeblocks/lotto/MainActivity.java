@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
     Lotto lottoTest = new Lotto();                          //(object creation)
     //[declaring TextView to display numbers + initialization]
     TextView[] numbers_TextView = new TextView[NUMBER_SEL];     //(number boxes)          //TODO: [why NUMBER_SEL which should be global variable not recognized here?]
-    int[] numberArray = lottoTest.getNumbers();     //(getNumbers 메소드에 [] 잇는 대신에 저장할 별도의 숫자 배열 -- 시각상(지저분한 것 같아서))
-    Button button_generate;             //(랜덤 숫자 발생 버튼)
-    Switch switch_freqToggle;           //(자주 나오는 숫자 반영 여부 스위치)
-    boolean isSwitchChecked = false;    //(스위치 체크 여부 -> 랜덤 숫자 생성에 영향!)
+    int[] numberArray = lottoTest.getNumbers();     //(instead of attaching [] next to getNumbers (for array), making separate array variable to save it! -- for visual(may have looked messy))
+    Button button_generate;             //(button to random generate numbers)
+    Switch switch_freqToggle;           //(switch to toggle whether to reflect frequently picked number)
+    boolean isSwitchChecked = false;    //(whether switch is checked -> affecting generation of random numbers!)
 
 
     @Override
