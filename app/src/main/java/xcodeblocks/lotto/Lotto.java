@@ -88,11 +88,11 @@ public class Lotto {
         Arrays.sort(numbers);       //(ascending sort using existing method(from collection))
     }
 
-//[랜덤 생성 -- 숫자 1개]
+//[random generate (for) one number]
     public static int getRandom(int max) {
-        return ( (int) (Math.random() * max) + 1 );       //(원래 double형 결과가 나오는 거라서 & (그냥은) 1 적은 숫자까지만 나옴.) -- (위 '참고'사항 참고)
+        return ( (int) (Math.random() * max) + 1 );       //(this originally returns 'double' format & it gives number till 1 less than max.) -- (see 'reference' above)
     }
-//[숫자 교환]
+//[swapping numbers]
     private void swap(int x, int y) {
         int temp = x;
                x = y;
@@ -104,6 +104,6 @@ public class Lotto {
         return numbers;
     }
 
-//[setter]      -- (필요할 때만!)
+//[setter]      -- (only if needed!)
 
 }
