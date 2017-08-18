@@ -98,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
             each.setText(" ");
         }
 
-//[버튼 터치(클릭) 이벤트]
+//[button touch(click) event -- mostly interchangeable]
         button_generate.setOnTouchListener( new View.OnTouchListener()
         {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                lottoTest.numbersGenerate(isSwitchChecked);        //(랜덤 숫자 생성 - 누를때마다 실행되므로 매번 달라지게 됨)     //([추가]: 스위치 작동 여부에 따라 내부 동작이 약간 달라짐!)
+                lottoTest.numbersGenerate(isSwitchChecked);        //(generate random number - different results as it generates for each presses)     //([addition] slight change to internal mechanism according to whether switch is enabled!)
 
                 String str = null;                              //(임시 저장 -- logcat으로 갈 문자열(DEBUG).)
                 for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
