@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(stringFromJNI());
 */   }
 
-//[menu_main.xml 설정 읽어오기] -- (액션바 메뉴 구현 준비)
+//[read configuration from menu_main.xml] -- (preparing to realize action bar menu)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -168,13 +168,13 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-//[숫자 보여주기 초기화 - 메뉴 버튼 구현]
+//[resetting displaying numbers - realizing menu buttons]
         if (id == R.id.action_reset) {
-            //(확장형 for문: 6칸 모두 숫자 없애기(빈칸으로 다시 표시))
+            //('enhanced for loop': clear all 6 boxes of number(display to empty boxes again))
             for (TextView each: numbers_TextView) {
                 each.setText(" ");
             }
-            Toast.makeText( getApplicationContext(), "빈칸으로 초기화됐습니다!", Toast.LENGTH_SHORT).show();
+            Toast.makeText( getApplicationContext(), "resetted to empty boxes!", Toast.LENGTH_SHORT).show();
             return true;
         }
 
