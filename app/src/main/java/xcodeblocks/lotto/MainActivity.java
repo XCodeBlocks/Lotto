@@ -82,15 +82,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("Lotto Number Generation app");             //(changes the (content of the) title that would appear in upper row)
 
-//[버튼 생성]
-    //[각각의 TextView 객체 할당]     -- (선언은 위에서 미리...)
+//[generating buttons]
+    //[assign each 'TextView' objects]     -- (already declared above)
         numbers_TextView[0] = (TextView) findViewById(R.id.numbers0);
         numbers_TextView[1] = (TextView) findViewById(R.id.numbers1);
         numbers_TextView[2] = (TextView) findViewById(R.id.numbers2);
         numbers_TextView[3] = (TextView) findViewById(R.id.numbers3);
         numbers_TextView[4] = (TextView) findViewById(R.id.numbers4);
         numbers_TextView[5] = (TextView) findViewById(R.id.numbers5);
-        button_generate = (Button) findViewById(R.id.button_generate);      //[버튼 객체 할당] -- (선언은 위에서)
+        button_generate = (Button) findViewById(R.id.button_generate);      //[assign button objects] -- (already declared above)
         switch_freqToggle = (Switch) findViewById(R.id.switch_frequentNumbers);
 
 //(확장형 for문: 빈칸으로 초기화)
