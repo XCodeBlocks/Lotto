@@ -84,8 +84,8 @@ public class Lotto {
                 index++;            //(next index)    //(don't need to change flag here -- resets ever loop)
             }
         }
-    //[[2: 오름차순 정렬]]
-        Arrays.sort(numbers);       //(기존의 메소드를 이용한 오름차순 정렬)
+    //[[2: ascending sort]]
+        Arrays.sort(numbers);       //(ascending sort using existing method(from collection))
     }
 
 //[랜덤 생성 -- 숫자 1개]
