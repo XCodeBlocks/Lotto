@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("로또 번호 생성 앱");             //(제목(맨 윗줄) 내용 변경)
+        setTitle("Lotto Number Generation app");             //(changes the (content of the) title that would appear in upper row)
 
 //[버튼 생성]
     //[각각의 TextView 객체 할당]     -- (선언은 위에서 미리...)
