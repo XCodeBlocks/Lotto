@@ -54,7 +54,7 @@ public class Lotto {
 //[generate random numbers whenever executed(called)]
     public void numbersGenerate(boolean flag) {     //(flag: whether switch is on = whether 'frequently picked numbers' are reflected)
     //[[1: pick 6 random numbers]]
-        int index = 0;      //(index of 6 number array)
+        int index = 0;      //(index of 6 number array) -- (to be used later!)
         int rnd = 0;
         while ( index < NUMBER_SEL ) {       //(index should not automatically move to next (so for loop is not used))
             //[1: create each 1]
@@ -72,16 +72,16 @@ public class Lotto {
                 rnd = getRandom(45);    //(-> external method)
             }
             //[2: check this (number) to see if it's duplicate(same as already picked numbers)]
-            boolean isDup = false;      //(switch whether if it's duplicate -- initialized  to this whenever while-looped)
+            boolean isDup = false;      //(switch whether if it's duplicate -- initialized  to this whenever (outer) while-looped)
             for (int pickedNum: numbers) {          //('enhanced for loop')
                 if (rnd == pickedNum) {     //(If it matches the already picked numbers...)
                     isDup = true;   break;  //(... prevent 'index' from going next.)
                 }
             }
-            //[3: 중복이 되지 않을 때만 -> 다음 숫자 뽑기]
+            //[3: only if it's not duplicate -> pick(save) next number]
             if(! isDup) {
-                numbers[index] = rnd;       //(실제 대입)
-                index++;            //(다음 index)    //(flag는 매번 초기화되므로 여기서 건들 필요 X)
+                numbers[index] = rnd;       //(actual assignment)
+                index++;            //(next index)    //(don't need to change flag here -- resets ever loop)
             }
         }
     //[[2: 오름차순 정렬]]
