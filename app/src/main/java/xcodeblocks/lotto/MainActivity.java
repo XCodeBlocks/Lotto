@@ -105,16 +105,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 lottoTest.numbersGenerate(isSwitchChecked);        //(generate random number - different results as it generates for each presses)     //([addition] slight change to internal mechanism according to whether switch is enabled!)
 
-                String str = null;                              //(임시 저장 -- logcat으로 갈 문자열(DEBUG).)
-                for( int x = 0 ; x < numberArray.length ; x++ )       //(숫자 배열(numberArray) 전체를 돌면서(length 필드로 길이 얻음)...)
+                String str = null;                              //(temporaryily save -- string to go to logcat(DEBUG).)
+                for( int x = 0 ; x < numberArray.length ; x++ )       //(going around entirely on array of numbers(numberArray) (size acquired from 'length' field)...)
                 {
-                    String eachString = Integer.toString( numberArray[x] );         //(숫자 (별로) -> 문자열 변환)
-                    numbers_TextView[x].setText(eachString);                        //(해당 값들로 숫자 출력하게...)
-                    str += ( eachString + " ");         //(DEBUG: ...로그 출력에 필요한 String 형태로 변환 + (숫자들 구별되게 띄어쓰기 추가))
+                    String eachString = Integer.toString( numberArray[x] );         //(for each numbers -> change to String)
+                    numbers_TextView[x].setText(eachString);                        //(...so those numbers can be shown.)
+                    str += ( eachString + " ");         //(DEBUG: change to String format needed for outputting to log + (spaces between numbers to distinguish each))
                 }
-                Log.i("String", "디버그: " + str );                        //(logcat으로 출력)
+                Log.i("String", "DEBUG: " + str );                        //(output to 'logcat')
 
-                return false;       //(끝)
+                return false;       //(END)
             }
         }
         );
